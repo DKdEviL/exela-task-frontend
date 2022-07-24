@@ -2,13 +2,14 @@ import Axios from 'axios';
 import React from 'react';
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import DataService from '../../services/data.service';
 
 
 const TableComponent = (props) => {
 
 
-    const deleteButtonHandler = (id) => {
-        Axios.delete(`https://exela-hiring-task-deepak.herokuapp.com/delete/${id}`)
+    const deleteButtonHandler = async (id) => {
+        const res = await DataService.deleteBill(id)
         props.updateTableData();
     }
 
@@ -34,9 +35,12 @@ const TableComponent = (props) => {
                                 <td>{row.billNo}</td>
                                 <td>{row.billDate}</td>
                                 <td>{row.totalAmount}</td>
-                                <td>{row.invoiceId}</td>
+                                <td>{row.isPaid ? row.invoiceId : 'Due'}</td>
                                 <td>
-                                    <Link to={`/edit/${row._id}`}>
+                                    <Link style={{margin: '10px'}} to={`/bill/${row._id}`}>
+                                        View
+                                    </Link>
+                                    <Link style={{margin: '10px'}} to={`/edit/${row._id}`}>
                                         Edit
                                     </Link>
                                     <button onClick={() => {

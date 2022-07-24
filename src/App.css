@@ -1,7 +1,16 @@
+* {
+  color: white;
+  font-weight: 400;
+}
+
 .App {
   text-align: center;
   width: 80%;
+  height: 100%;
   margin: auto;
+  background: url('https://business-review.eu/wp-content/uploads/images/news/city/Electricity.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .App-link {
@@ -18,22 +27,25 @@
   flex-direction: column;
 }
 
-label, input {
-  width: 50%;
+label {
+  width: 30%;
+  text-align: start;
 }
 
 input {
+  width: 50%;
   padding: 10px 15px;
   border: 1px solid gray;
   border-radius: 5px;
   font-size: 12px;
+  font-weight: 500;
   max-width: 150px;
   margin: 10px auto;
+  color: gray;
 }
 
 label {
   font-size: 12px;
-  color: gray;
   font-weight: 600;
 }
 
@@ -55,18 +67,107 @@ button:hover {
   cursor: pointer;
 }
 
+button:disabled {
+  background: rgb(179, 171, 171);
+  opacity: 0.4;
+  pointer-events: none;
+}
+
 tr, td{
   border: 1px solid gray;
   border-radius: 5px;
   border-spacing: 0;
   padding: 10px;
-  color: lightslategray;
   border-radius: 10px;
 }
 thead td:last-of-type {
   width: 250px
 }
+
+table {
+  position: relative;
+  background: white;
+}
+thead {
+  position: sticky;
+  top: 0;
+  font-weight: bolder;
+  font-size: 18px;
+  background: whitesmoke;
+}
+
+
 table, table * {
   border-spacing: 0px;
+  color: rgb(41, 38, 38);
   border-collapse: collapse;
+  max-height: 600px;
+}
+
+.app_loader_container {
+  height: 100vh;
+  width: 100vw;
+  position: relative;
+}
+
+.app_loader {
+  background: transparent;
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  border-top: 4px solid lightgray;
+  border-left: 4px solid lightgray;
+  border-bottom: 4px solid lightgrey;
+  border-right: 4px solid gray;
+  animation: loadingAnimation 1.2s infinite ease-in;
+}
+
+.checkMark {
+  display: inline-block;
+  transform: rotate(45deg);
+  height: 24px;
+  width: 12px;
+  border-bottom: 7px solid #78b13f;
+  border-right: 7px solid #78b13f;
+}
+.crossMark::after {
+  display: inline-block;
+  content: "\00d7";
+  font-weight: 900;
+  font-size: 48px;
+  color: rgb(247, 20, 20);
+}
+
+.width100p {
+  width: 100%;
+}
+
+@keyframes loadingAnimation {
+  7% {
+    transform: rotateZ(45deg);
+  }
+  14% {
+    transform: rotateZ(90deg);
+  }
+  28% {
+    transform: rotateZ(135deg);
+  }
+  42% {
+    transform: rotateZ(180deg);
+  }
+  56% {
+    transform: rotateZ(225deg);
+  }
+  70% {
+    transform: rotateZ(270deg);
+  }
+  84% {
+    transform: rotateZ(315deg);
+  }
+  98% {
+    transform: rotateZ(360deg);
+  }
+  100% {
+    transform: rotateZ(0deg);
+  }
 }
