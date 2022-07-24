@@ -1,0 +1,72 @@
+.App {
+  text-align: center;
+  width: 80%;
+  margin: auto;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+.flex_column {
+  flex-direction: column;
+}
+
+label, input {
+  width: 50%;
+}
+
+input {
+  padding: 10px 15px;
+  border: 1px solid gray;
+  border-radius: 5px;
+  font-size: 12px;
+  max-width: 150px;
+  margin: 10px auto;
+}
+
+label {
+  font-size: 12px;
+  color: gray;
+  font-weight: 600;
+}
+
+.input_container {
+  width: 500px;
+}
+
+button {
+  margin: 10px;
+  background: rgb(137, 137, 208);
+  padding: 10px 20px;
+  color: white;
+  font-weight: 500;
+  border: none;
+  border-radius: 10px;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+tr, td{
+  border: 1px solid gray;
+  border-radius: 5px;
+  border-spacing: 0;
+  padding: 10px;
+  color: lightslategray;
+  border-radius: 10px;
+}
+thead td:last-of-type {
+  width: 250px
+}
+table, table * {
+  border-spacing: 0px;
+  border-collapse: collapse;
+}
